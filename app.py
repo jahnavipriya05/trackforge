@@ -1,9 +1,9 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import os
 app = Flask(__name__)
-app.secret_key = "trackforge_secret"
+app.secret_key = os.environ.get("SECRET_KEY", "devkey")
 
 # =========================
 # DATABASE CONFIG 
@@ -343,4 +343,4 @@ def forgot():
 # RUN APP
 # =========================
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
