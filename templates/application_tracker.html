@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}
+TrackForge
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow border-0">
+
+                <div class="card-body p-4">
+
+                    <h3 class="text-center mb-4">Add Application</h3>
+
+                    <form method="POST">
+
+                        <!-- Company -->
+                        <div class="mb-3">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" name="company_name" class="form-control" placeholder="Ex: Google" required>
+                        </div>
+
+                        <!-- Role -->
+                        <div class="mb-3">
+                            <label class="form-label">Role</label>
+                            <input type="text" name="role" class="form-control" placeholder="Ex: Backend Intern" required>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="mb-4">
+                            <label class="form-label">Application Status</label>
+                            <select name="status" class="form-select">
+                                <option>Applied</option>
+                                <option>Interview</option>
+                                <option>Rejected</option>
+                                <option>Offer</option>
+                            </select>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="d-grid">
+                            <button class="btn btn-success">Add Application</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

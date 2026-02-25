@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+    TrackForge
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card shadow border-0 mx-auto" style="max-width:500px;">
+    <div class="card-body p-4 text-center">
+
+        <h3 class="mb-4">Profile</h3>
+
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+
+                {% if error %}
+                <div class="alert alert-danger text-center">
+                    {{ error }}
+                </div>
+                {% endif %}
+        <hr>
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label class="form-label">Change Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter new password">
+            </div>
+
+            <button class="btn btn-primary w-100">
+                Update Password
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+</div>
+{% endblock %}

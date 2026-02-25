@@ -1,0 +1,94 @@
+{% extends "base.html" %} 
+{% block title %}
+TrackForge
+{% endblock %}
+
+{% block content %}
+
+<div class="min-vh-100 d-flex flex-column">
+
+    <!-- HERO SECTION -->
+    <div class="flex-grow-1 d-flex justify-content-center align-items-center text-center section">
+
+        <div>
+            <h1 class="fw-bold mb-3">Welcome to TrackForge 🚀</h1>
+
+            <p class="text-muted mb-4 fs-5">
+                Turn your daily efforts into visible progress.
+                Stay consistent. Stay focused. Stay unstoppable.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <a href="{{ url_for('register') }}" class="btn btn-primary px-4">
+                    Get Started
+                </a>
+
+                <a href="{{ url_for('login') }}" class="btn btn-outline-dark px-4">
+                    Login
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- FEATURES SECTION -->
+    <div class="container text-center section">
+
+        <h2 class="fw-bold section-title">Why Use TrackForge?</h2>
+
+        <div class="row mt-4">
+
+            <!-- Feature 1 -->
+            <div class="col-md-4 mb-4 feature-box">
+                <h4>📚 Track Study Sessions</h4>
+                <p class="text-muted feature-text">
+                    Log subjects, hours, and notes to monitor your learning consistency.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4 mb-4 feature-box">
+                <h4>💼 Application Tracker</h4>
+                <p class="text-muted feature-text">
+                    Manage job and internship applications in one organized dashboard.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4 mb-4 feature-box">
+                <h4>📈 Track Progress</h4>
+                <p class="text-muted feature-text">
+                    See your total sessions and applications grow as you stay consistent.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MOTIVATION SECTION -->
+    <div class="bg-light text-center section">
+
+        <h3 class="fw-bold mb-3">Consistency Beats Talent</h3>
+
+        <p class="text-muted">
+            TrackForge helps you stay accountable, focused, and disciplined
+            so your goals become achievements.
+        </p>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+
+        <small>
+            © 2026 TrackForge • Built with dedication by Jahnavi 💙
+        </small>
+
+    </footer>
+
+</div>
+
+{% endblock %}

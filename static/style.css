@@ -1,0 +1,114 @@
+.ms-auto a{
+    border: none;
+    padding: 10px;
+}
+
+.registered-text a{
+    text-decoration: none;
+    color: black;
+}
+
+.section{
+    padding-top:80px;
+    padding-bottom:80px;
+}
+
+.section-title{
+    margin-bottom:40px;
+}
+
+.feature-text{
+    font-size:15px;
+    line-height:1.7;
+}
+
+#forgot{
+    text-decoration: none;
+}
+#forgot:hover{
+    color: rgba(0, 0, 0,0.9);
+}
+
+.feature-box{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 0.8s forwards;
+}
+
+.feature-box:nth-child(1){ animation-delay:0.2s; }
+.feature-box:nth-child(2){ animation-delay:0.6s; }
+.feature-box:nth-child(3){ animation-delay:1s; }
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.feature-box:hover{
+    transform:translateY(-8px) scale(1.03);
+    transition:0.3s;
+}
+
+.section:nth-child(even){
+    background:#fafafa;
+}
+
+.editdlt-btn{
+    width: 70px;
+    margin: 15px;
+    padding: 10px;
+    background-color: orange;
+    color: black;
+    border: none;
+}
+
+.edit-dlt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.square-card:hover{
+    transform: translateY(-6px);
+    transition:.2s;
+}
+.profile-circle{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#0d6efd;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.profile-dropdown{
+    position:absolute;
+    top:55px;
+    right:0;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    display:none;
+    min-width:140px;
+    overflow:hidden;
+}
+
+.profile-dropdown a{
+    display:block;
+    padding:10px;
+    color:#333;
+    text-decoration:none;
+}
+
+.profile-dropdown a:hover{
+    background:#f1f1f1;
+}
+
+.profile-dropdown.show{
+    display:block;
+}

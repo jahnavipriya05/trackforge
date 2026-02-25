@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TrackForge{% endblock %}</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="bg-light">
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+    <a class="navbar-brand fw-bold" href="{{ url_for('dashboard') }}">
+        TrackForge
+    </a>
+
+    <div class="ms-auto d-flex align-items-center gap-2">
+
+        <a href="{{ url_for('index') }}" class="btn btn-outline-light btn-sm">Home</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-light btn-sm">Dashboard</a>
+        <a href="{{ url_for('about') }}" class="btn btn-outline-light btn-sm">About</a>
+        <a href="{{ url_for('help') }}" class="btn btn-outline-light btn-sm">Help</a>
+
+        <div class="profile-wrapper position-relative">
+
+            <div class="profile-circle" id="profileBtn">
+                {{ session["user"][0]|upper if "user" in session else "👤" }}
+            </div>
+
+            <div class="profile-dropdown" id="profileMenu">
+                {% if "user" in session %}
+                    <a href="{{ url_for('profile') }}">Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+```
+
+</nav>
+
+<!-- PAGE CONTENT -->
+
+<div class="container py-4">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- FOOTER -->
+
+<footer class="text-center text-muted small py-3">
+    TrackForge © 2026
+</footer>
+
+
+<!--- script dropDown-->
+<script>
+document.addEventListener("click", function(e){
+    const btn = document.getElementById("profileBtn");
+    const menu = document.getElementById("profileMenu");
+
+    if(btn && btn.contains(e.target)){
+        menu.classList.toggle("show");
+    }else if(menu){
+        menu.classList.remove("show");
+    }
+});
+</script>
+
+</body>
+</html>
